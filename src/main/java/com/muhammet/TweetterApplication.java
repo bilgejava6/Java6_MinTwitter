@@ -21,7 +21,7 @@ public class TweetterApplication {
             secim = scanner.nextInt();
             switch (secim){
                 case 1: new UserProfileController().register(); break;
-                case 2: break;
+                case 2: new UserProfileController().login(); break;
                 case 3: break;
 
             }

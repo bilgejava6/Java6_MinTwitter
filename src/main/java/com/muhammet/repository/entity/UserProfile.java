@@ -14,7 +14,12 @@ import javax.persistence.*;
 @Table(name = "tbluserprofile")
 @NamedQueries({
         @NamedQuery(name = "UserProfile.existByUsername",
-        query = "SELECT COUNT(p)>0 FROM UserProfile p WHERE p.username = :username")
+        query = "SELECT COUNT(p)>0 FROM UserProfile p WHERE p.username = :username"),
+        @NamedQuery(name = "UserProfile.doLogin",
+                query = "SELECT COUNT(p)>0 FROM UserProfile p " +
+                        "WHERE p.username = :username AND p.password = :password"),
+        @NamedQuery(name = "UserProfile.findByUsername",
+                query = "SELECT p FROM UserProfile p WHERE p.username = :username")
 })
 public class UserProfile extends BaseEntity{
     @Id
