@@ -2,6 +2,7 @@ package com.muhammet.controllerspring;
 
 import com.muhammet.TweetterSpringWebApplication;
 import com.muhammet.repository.entity.Tweet;
+import com.muhammet.repository.view.VwTweet;
 import com.muhammet.service.TweetService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,7 @@ public class TweeterRestController {
         this.tweetService = new TweetService();
     }
     @GetMapping("/findall")
-    public ResponseEntity<List<Tweet>> findAllTweet(){
-        return  ResponseEntity.ok(tweetService.findAll());
+    public ResponseEntity<List<VwTweet>> findAllTweet(){
+        return  ResponseEntity.ok(tweetService.findAllViewTweet());
     }
 }
